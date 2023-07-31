@@ -1,7 +1,6 @@
 // api/genres.js
 import axios from 'axios'
 
-const API_KEY = 'YOUR_TMDB_API_KEY' // Ваш ключ для доступу до TMDB API
 const BASE_URL = 'https://api.themoviedb.org/3/genre'
 
 const apiGenres = axios.create({
