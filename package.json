@@ -1,5 +1,5 @@
 {
-	"homepage": "https://username.github.io/movie",
+	"homepage": "https://yamy007.github.io/movie",
 	"scripts": {
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build"
