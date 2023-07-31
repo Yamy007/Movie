@@ -51,7 +51,7 @@ export const MovieList = ({
 		}
 		fetchMovie()
 		fetchGenres()
-	}, [page, islanguage, minRating, maxRating, year, lang, genId])
+	}, [page, islanguage, minRating, maxRating, year, lang, genId, setGenerate, setMovie])
 
 	return (
 		<Container
