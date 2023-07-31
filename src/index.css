@@ -1,13 +1,212 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+a:-webkit-any-link {
+	text-decoration: none !important;
+}
+
+.wrappers {
+	padding: 1.5vh 1.2em 1.2em 1.2em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 8vh 1fr 2vh;
+	grid-template-areas:
+		'search  search search search'
+		'content content content content '
+		'pagination pagination pagination pagination';
+	justify-self: center;
+	align-self: center;
+	grid-auto-columns: 1fr;
+}
+.wrapper {
+	padding: 9vh 1.2em 1.2em 1.2em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 8vh 1fr 2vh;
+	grid-template-areas:
+		'search  search search search'
+		'content content content content '
+		'pagination pagination pagination pagination';
+	justify-self: center;
+	align-self: center;
+	grid-auto-columns: 1fr;
+}
+
+.content {
+	grid-area: content;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+/* .image {
+	display: block;
+
+	max-width: 100%;
+	height: auto;
+} */
+/* .card {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 35vh auto 45px;
+	margin: 10px;
+} */
+.pagination {
+	grid-area: pagination;
+	margin: auto;
+}
+
+.find {
+	grid-area: search;
+	grid-column-start: 2;
+	grid-column-end: 4;
+}
+
+.filter {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	grid-area: search;
+}
+.filters {
+	width: 23vw;
+}
+
+@media screen and (max-width: 1400px) {
+	.content {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.image {
+		height: 300px;
+	}
+	.card {
+		grid-template-rows: 300px auto 66px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.content {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.image {
+		object-position: center;
+	}
+}
+@media screen and (max-width: 500px) {
+	.content {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.image {
+		object-position: center;
+		width: 200px;
+		height: 300px;
+	}
+	.card {
+		grid-template-rows: 300px auto 45px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.list-title {
+		font-size: 25px;
+	}
+	.list-text {
+		font-size: 10px;
+	}
+}
+/* .list-title
+.list-text */
+.card {
+	position: relative; /* Д</Box>одаємо позиціонування relative до основного контейнера */
+	width: 23vw;
+	margin: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.image-container {
+	position: relative; /* Додаємо позиціонування relative до контейнера з картинкою */
+}
+
+.image {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.hover-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.card:hover .hover-content {
+	opacity: 1;
+}
+
+.detail-button {
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.Rating {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	margin-bottom: 1.3em;
+	align-items: center;
+}
+
+.list-text {
+	text-decoration: underline;
+
+	transition: 0.2s;
+}
+
+.list-text:hover {
+	transform: scale(1.2);
+	transition: 0.4s;
+}
+
+.filter {
+	padding: 0 1.2em 1.2em 1.2em;
+
+	width: 95%;
+	height: 9vh;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1.2em;
 }
