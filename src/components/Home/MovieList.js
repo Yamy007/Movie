@@ -35,23 +35,8 @@ export const MovieList = ({
 				setDatas(response.data)
 				setMovie(response.data.results)
 				setPage(response.data?.page)
-			} catch {
-				const response = await axios.get(
-					`http://api.themoviedb.org/3/discover/movie?api_key=35412d403f8ce3a591e01b81c0b112c6&language=${
-						islanguage ? 'en' : 'uk'
-					}&page=${page}
-					${minRating ? `&vote_average.gte=${minRating}` : '&vote_average.gte=0'}
-					${maxRating ? `&vote_average.lte=${minRating}` : '&vote_average.lte=10'}
-					${year ? `&primary_release_year=${year}` : ''}
-					${lang ? `&with_original_language=${lang}` : ''}
-					${genId ? `&with_genres=${genId}` : ''}`
-				)
-
-				setDatas(response.data)
-				setMovie(response.data.results)
-				setPage(response.data?.page)
-			} finally {
-				console.log('error')
+			} catch (err) {
+				console.log(err)
 			}
 		}
 		const fetchGenres = async () => {
