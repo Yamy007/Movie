@@ -22,7 +22,7 @@ export const MovieList = ({
 		setGenerate(true)
 		const fetchMovie = async () => {
 			try {
-				const response = await api.get()
+				const response = await api.get('/discover/movie?page=1')
 
 				setDatas(response.data)
 				setMovie(response.data.results)

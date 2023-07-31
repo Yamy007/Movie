@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default axios.create({
-	baseURL: 'https://api.themoviedb.org/3/discover/movie?page=1',
+	baseURL: 'https://api.themoviedb.org/3',
 	headers: {
 		accept: 'application/json',
 		Authorization:
