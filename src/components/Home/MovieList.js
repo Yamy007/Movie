@@ -22,15 +22,16 @@ export const MovieList = ({
 		setGenerate(true)
 		const fetchMovie = async () => {
 			try {
-				const response = await api.get(
-					`?page=${page}&language=${islanguage ? 'en' : 'uk'}
-		 ${minRating ? `&vote_average.gte=${minRating}` : '&vote_average.gte=0'}
-		 ${maxRating ? `&vote_average.lte=${minRating}` : '&vote_average.lte=10'}
-		 ${year ? `&primary_release_year=${year}` : ''}
-		 ${lang ? `&with_original_language=${lang}` : ''}
-		 ${genId ? `&with_genres=${genId}` : ''}
-		 `
-				)
+				const response = await api
+					.get
+					// 			`?page=${page}&language=${islanguage ? 'en' : 'uk'}
+					//  ${minRating ? `&vote_average.gte=${minRating}` : '&vote_average.gte=0'}
+					//  ${maxRating ? `&vote_average.lte=${minRating}` : '&vote_average.lte=10'}
+					//  ${year ? `&primary_release_year=${year}` : ''}
+					//  ${lang ? `&with_original_language=${lang}` : ''}
+					//  ${genId ? `&with_genres=${genId}` : ''}
+					//  `
+					()
 
 				setDatas(response.data)
 				setMovie(response.data.results)
@@ -51,7 +52,17 @@ export const MovieList = ({
 		}
 		fetchMovie()
 		fetchGenres()
-	}, [page, islanguage, minRating, maxRating, year, lang, genId, setGenerate, setMovie])
+	}, [
+		page,
+		islanguage,
+		minRating,
+		maxRating,
+		year,
+		lang,
+		genId,
+		setGenerate,
+		setMovie,
+	])
 
 	return (
 		<Container
