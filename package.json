@@ -1,7 +1,10 @@
 {
 	"homepage": "https://yamy007.github.io/movie",
 	"scripts": {
-		"predeploy": "npm run build",
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
 		"deploy": "gh-pages -d build"
 	},
 	"name": "movie",
@@ -26,12 +29,6 @@
 		"react-scripts": "5.0.1",
 		"styled-components": "^5.3.11",
 		"web-vitals": "^2.1.4"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
 		"extends": [
