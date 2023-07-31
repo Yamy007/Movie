@@ -24,9 +24,7 @@ export const MovieList = ({
 			try {
 				const response = await api.get(
 					`?page=${page}&language=${islanguage ? 'en' : 'uk'}
-							${year ? `&primary_release_year=${year}` : ''}
-							${lang ? `&with_original_language=${lang}` : ''}
-							${genId ? `&with_genres=${genId}` : ''}
+							
 		  `
 				)
 
