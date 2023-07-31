@@ -23,7 +23,7 @@ export const MovieList = ({
 		const fetchMovie = async () => {
 			try {
 				const response = await api.get(
-					`?page=${page}}
+					`?page=${page}
 							
 		  `
 				)
