@@ -24,8 +24,11 @@ export const MovieList = ({
 			try {
 				const response = await api.get(
 					`/discover/movie?page=${page} ${
-						lang ? '&language=en' : '&language=ua'
-					}`
+						islanguage ? '&language=en' : '&language=ua'
+					}
+					${minRating ? `&vote_average.gte=${minRating}` : '&vote_average.gte=0'}
+					${maxRating ? `&vote_average.lte=${minRating}` : '&vote_average.lte=10'}
+					`
 				)
 
 				setDatas(response.data)
