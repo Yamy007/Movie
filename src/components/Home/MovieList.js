@@ -28,6 +28,9 @@ export const MovieList = ({
 					}
 					${minRating ? `&vote_average.gte=${minRating}` : '&vote_average.gte=0'}
 					${maxRating ? `&vote_average.lte=${minRating}` : '&vote_average.lte=10'}
+					${year ? `&primary_release_year=${year}` : ''}
+					${lang ? `&with_original_language=${lang}` : ''}
+					${genId ? `&with_genres=${genId}` : ''}
 					`
 				)
 
